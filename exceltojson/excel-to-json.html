@@ -13,7 +13,6 @@
         <br> <br>
         <textarea name="json-data" id="json-data" rows="25" style="width: 100%;"></textarea>
         <br> <br>
-        <button id="d1-json">Download JSON File</button>
     </div>
     <script>
         var input = document.getElementById('input');
@@ -41,17 +40,7 @@
         })
         document.getElementById('d1-json').onclick=function(){
             var json_str=document.getElementById('json-data').value;
-            downloadObjectAsJson(json_str,'excel_to_json');
         };
-        function downloadObjectAsJson(str,filename){
-            var data_str="data:text/json;charset=utf-8;"+encodeURIComponent(str);
-            var anchor = document.createElement('a');
-            anchor.setAttribute('href',data_str);
-            anchor.setAttribute('download',filename+".json");
-            document.body.appendChild(anchor);
-            anchor.click();
-            anchor.remove();
-        }
     </script>
 
 
